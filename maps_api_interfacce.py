@@ -2,18 +2,23 @@
 Simple Program to help you get started with Google's APIs
 """
 import urllib.request, json, os, sys
+
+# Read the API key from the file
+with open("key.txt", "r") as f:
+    key = f.read()
+
 #Sends the request and reads the response.
 #response = urllib.request.urlopen("https://maps.googleapis.com/maps/api/directions/json?").read()
 #Loads response as JSON
 
 body = "https://maps.googleapis.com/maps/api/directions/json?"
 origin = "origin=53.306292,-6.218746"
-destination = "&destination=53.303965, -6.217158"
+destination = "&destination=53.303965,-6.217158"
 mode = "&mode=walking"
 language = "&language=en"
 alternatives = "&alternatives=false"
 units = "&units=metric"
-api_key = "&key=AIzaSyDX2viar6xzqIYr_vRabSQJROdDoHC2QjU"
+api_key = "&key=" + key
 
 
 response = body + origin + destination + mode + language + alternatives + units + api_key
