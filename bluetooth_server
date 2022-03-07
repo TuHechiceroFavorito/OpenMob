@@ -1,0 +1,36 @@
+import socket
+
+adapter_addr = '1C:BF:C0:26:2B:6E'
+target = "D8:0B:9A:BD:32:FF"
+channel = 15
+buf_size = 1024
+
+sock = socket.socket(family=socket.AF_BLUETOOTH, type=socket.SOCK_STREAM, proto=socket.BTPROTO_RFCOMM)
+sock.bind((adapter_addr, channel))
+
+
+def client():
+    print("Waiting for connection...")
+    sock.connect((target, channel))
+    print("Connected succesfully")
+    sock.send(b"Working")
+
+def server():
+    print("Starting bluetooth server")
+    sock.listen(1)
+    try:
+        print('Listening for connection...')
+        client, address = sock.accept()
+        print(f'Connected to {address}')
+
+    #     while True:
+    #         data = client.recv(buf_size)
+    #         if data:
+    #             print(data)
+
+    except Exception as e:
+        print(f'Something went wrong: {e}')
+        client.close()
+        sock.close()
+
+server()
