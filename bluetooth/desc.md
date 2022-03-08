@@ -13,3 +13,4 @@ sudo apt install libbluetooth-dev
 
 ## References
 - https://github.com/pybluez/pybluez/blob/master/examples/simple/rfcomm-server.py
+- https://github.com/dinohorvat/pybluez--rfcomm-server/blob/master/rfcomm-server.py
