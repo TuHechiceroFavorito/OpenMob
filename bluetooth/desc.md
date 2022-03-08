@@ -11,6 +11,10 @@ Run the following:
 ```
 sudo apt install libbluetooth-dev
 ```
+### bluetooth.btcommon.BluetoothError: (2, 'No such file or directory')
+https://stackoverflow.com/questions/36675931/bluetooth-btcommon-bluetootherror-2-no-such-file-or-directory
+Read the whole post, all the way down.
+
 
 ## References
 - https://github.com/pybluez/pybluez/blob/master/examples/simple/rfcomm-server.py

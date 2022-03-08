@@ -1,12 +1,17 @@
 from bluetooth import *
+import subprocess
+from time import sleep
 
 class Connection:
     def __init__(self):     
         self.buf_size = 1024
+        
+        cmd = "hciconfig hci0 piscan"
+        subprocess.check_output(cmd, shell=True)
 
     def start_socket(self):
         self.sock = BluetoothSocket(RFCOMM)
-        self.sock.bind(("", PORT_ANY))
+        self.sock.bind(("", 0))
 
     def start_server(self):
         self.sock.listen(1)
@@ -34,6 +39,9 @@ if __name__ == "__main__":
     conn = Connection()
     conn.start_socket()
     conn.start_server()
-    conn.server_connect()
-    while True:
-        conn.recv()
+    try:
+        conn.server_connect()
+        while True:
+            conn.recv()
+    except KeyboardInterrupt:
+        print("Program terminated")
