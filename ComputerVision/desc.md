@@ -20,9 +20,17 @@ Run the following:
 sudo apt-get install libatlas-base-dev
 ```
 
+### ImportError: numpy.core.multiarray failed to import
+Run the following:
+```
+pip install -U numpy
+```
+
 # Path detection
 
 
 ## References
 - https://cocodataset.org/#home
 - https://www.youtube.com/watch?v=HXDD7-EnGBY
+- https://stackoverflow.com/questions/53347759/importerror-libcblas-so-3-cannot-open-shared-object-file-no-such-file-or-dire
+- https://stackoverflow.com/questions/20518632/importerror-numpy-core-multiarray-failed-to-import
