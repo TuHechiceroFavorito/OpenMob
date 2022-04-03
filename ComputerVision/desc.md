@@ -15,6 +15,10 @@ This folder contains the model that OpenCV uses to detect objects. It was taken 
 Check the path for loading the models, it might be a misspelling, so it's not really loading any model.
 
 ### ImportError: libcblas.so.3: cannot open shared object file: No such file or directory
+Run the following:
+```
+sudo apt-get install libatlas-base-dev
+```
 
 # Path detection
 
