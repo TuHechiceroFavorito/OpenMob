@@ -2,6 +2,9 @@
 The Raspberry Pi will create a bluetooth server. This bluetooth server will be used to send a panic signal from an Android phone. In case something goes wrong and we need to stop the vehicle, we'll press the big red button on the app, and the vehicle will stop and terminate the code.
 It also allows to send the target coordinates to the vehicle.
 
+## Warning
+The current version doesn't work on Windows, only in Raspbian.
+
 ## Files
 _blue_server.py_ is the server file that will run on the Raspberry Pi. _OpenMob.aia_ is the MIT App Inventor project of the Android app, and _OpenMob.apk_ is the source code to be installed in the device.
 
