@@ -15,6 +15,16 @@ This folder contains the model that OpenCV uses to detect objects. It was taken 
 Check the path for loading the models, it might be a misspelling, so it's not really loading any model.
 
 ### ImportError: libcblas.so.3: cannot open shared object file: No such file or directory
+Run the following:
+```
+sudo apt-get install libatlas-base-dev
+```
+
+### ImportError: numpy.core.multiarray failed to import
+Run the following:
+```
+pip install -U numpy
+```
 
 # Path detection
 ## Detection algorithm
@@ -36,3 +46,5 @@ The fuge point is where all lines meet. So once we have the limits parametised, 
 ## References
 - https://cocodataset.org/#home
 - https://www.youtube.com/watch?v=HXDD7-EnGBY
+- https://stackoverflow.com/questions/53347759/importerror-libcblas-so-3-cannot-open-shared-object-file-no-such-file-or-dire
+- https://stackoverflow.com/questions/20518632/importerror-numpy-core-multiarray-failed-to-import
