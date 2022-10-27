@@ -7,7 +7,10 @@ from pprint import pprint
 dir = "maps/"
 
 
-def request_api(ori_coord, dest_coord):
+def request_api(origin_coord, destination_coord):
+    ori_coord = str(origin_coord[0]) + "," + str(origin_coord[1])
+    dest_coord = str(destination_coord[0]) + "," + str(destination_coord[1])
+
     # Read the API key from the file
     with open(dir + "key.txt", "r") as f:
         key = f.read()
@@ -65,17 +68,21 @@ def get_node(node):
         print("NO MORE NODES")
         return "END"
 
-    return nodes[str(node)]
+    proc_node = []
+    for el in nodes[str(node)].split(", "):
+        proc_node.append(float(el))
+
+    return proc_node
 
 if __name__ == "__main__":
-    origin = "53.306292,-6.218746"
-    destination = "53.303965,-6.217158"
+    origin = [53.306292,-6.218746]
+    destination = [53.303965,-6.217158]
     request_api(origin, destination)
 
     node = 0
     coord = get_node(node)
     while coord != "END":
-        print(f"Node {node + 1} at {coord}\n")
+        print(coord)
         node += 1
         coord = get_node(node)
 
