@@ -12,5 +12,5 @@ def test():
     c = a+b
     return c
 
-d =test()
+d = test()
 print(d)
