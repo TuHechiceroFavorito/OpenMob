@@ -1,8 +1,8 @@
 import requests
 
-url = "https://httpbin.org/get"
+url = "https://httpbin.org/get?key=value"
 
-args = {"something":"in here"}
+args = {"key":"value"}
 
 req = requests.get(url, params=args)
 print(req.content.decode("utf-8"))
