@@ -1,0 +1,1 @@
+- Add full stop if the free path in object detection is too narrow
