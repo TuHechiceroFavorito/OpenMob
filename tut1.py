@@ -1,3 +1,5 @@
+# File used during Python tutorial for ElecSoc members
+
 a = 1
 b = 2.3
 

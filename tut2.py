@@ -1,3 +1,5 @@
+# File used during api tutorial for ElecSoc members
+
 import requests
 
 url = "https://httpbin.org/get"
